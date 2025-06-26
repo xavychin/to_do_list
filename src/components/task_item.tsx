@@ -1,10 +1,19 @@
 import React from "react";
 
-function task_item() {
+interface taskitemProps {
+  id: number;
+  dueDate: string;
+  taskName: string;
+  onDelete: (noteIndexToDelete: number) => void;
+}
+
+function task_item({ id, dueDate, taskName, onDelete }: taskitemProps) {
   return (
     <div>
-      <span>task</span>
-      <button>-</button>
+      <span>
+        {taskName} | {dueDate}
+      </span>
+      <button onClick={() => onDelete(id)}>-</button>
     </div>
   );
 }
