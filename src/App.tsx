@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import "./style/App.css";
 import AddTask from "./components/add_task";
 import TaskItem from "./components/task_item";
