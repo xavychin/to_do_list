@@ -19,6 +19,9 @@
 
 .task-checkbox {
   grid-column: 3 / span 1;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
 }
 
 .delete-btn {
