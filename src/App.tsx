@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./style/App.css";
 import AddTask from "./components/add_task";
 import TaskItem from "./components/task_item";
+import "./style/App.css";
 
 function App() {
   const [tasks, setTasks] = useState<
@@ -43,8 +44,13 @@ function App() {
           return new Date(a).getTime() - new Date(b).getTime();
         })
         .map((dueDate) => (
-          <div key={dueDate}>
-            <h3>{dueDate}</h3>
+          <div key={dueDate + Date.now()} className="task-item-group-container">
+            {dueDate !== "" ? (
+              <h2 className="date_header">
+                <u>{dueDate}</u>
+              </h2>
+            ) : null}
+
             {groupedTasks[dueDate].map((task) => (
               <TaskItem
                 key={task.id}

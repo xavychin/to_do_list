@@ -1,3 +1,5 @@
+import "../style/task_item.css";
+
 interface taskitemProps {
   id: number;
   dueDate: string;
@@ -7,11 +9,12 @@ interface taskitemProps {
 
 function task_item({ id, dueDate, taskName, onDelete }: taskitemProps) {
   return (
-    <div>
-      <span>
-        {taskName} | {dueDate}
-      </span>
-      <button onClick={() => onDelete(id)}>-</button>
+    <div key={id} className="task-item">
+      <span className="task-name">{taskName}</span>
+      <span className="task-date">{dueDate}</span>
+      <button className="delete-btn" onClick={() => onDelete(id)}>
+        -
+      </button>
     </div>
   );
 }

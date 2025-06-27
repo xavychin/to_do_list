@@ -1,0 +1,14 @@
+.task-item-group-container {
+  margin: 2% auto;
+  background-color: lightgrey;
+  width: 600px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 3px solid darkgrey;
+}
+
+.date_header {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
