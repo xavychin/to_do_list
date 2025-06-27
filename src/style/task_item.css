@@ -1,6 +1,6 @@
 .task-item {
   display: grid;
-  grid-template-columns: 75% 20% 5%;
+  grid-template-columns: 70% 20% 5% 5%;
   margin: 1%;
   font-size: 1.2em;
 }
@@ -17,8 +17,12 @@
   margin: auto;
 }
 
-.delete-btn {
+.task-checkbox {
   grid-column: 3 / span 1;
+}
+
+.delete-btn {
+  grid-column: 4 / span 1;
   background-color: orangered;
   box-sizing: border-box;
   border: 1px solid black;

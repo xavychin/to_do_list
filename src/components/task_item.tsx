@@ -12,6 +12,7 @@ function task_item({ id, dueDate, taskName, onDelete }: taskitemProps) {
     <div key={id} className="task-item">
       <span className="task-name">{taskName}</span>
       <span className="task-date">{dueDate}</span>
+      <input className="task-checkbox" type="checkbox"></input>
       <button className="delete-btn" onClick={() => onDelete(id)}>
         -
       </button>
