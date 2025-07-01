@@ -6,6 +6,7 @@ interface addtaskProps {
     id: number;
     dueDate: string;
     taskName: string;
+    checked: boolean;
   }) => void;
 }
 
@@ -24,7 +25,7 @@ function add_task({ onAddTask }: addtaskProps) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (taskName.trim()) {
-      onAddTask({ id: Date.now(), dueDate, taskName });
+      onAddTask({ id: Date.now(), dueDate, taskName, checked: false });
     }
     setTaskName("");
     setDueDate("");

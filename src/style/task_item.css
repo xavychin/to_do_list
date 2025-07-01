@@ -1,8 +1,13 @@
 .task-item {
   display: grid;
-  grid-template-columns: 70% 20% 5% 5%;
+  grid-template-columns: 65% 20% 5% 5% 5%;
   margin: 1%;
-  font-size: 1.2em;
+}
+
+.input-container {
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: 75% 25%;
 }
 
 .task-name {
@@ -10,36 +15,155 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  align-items: center;
 }
 
 .task-date {
   grid-column: 2 / span 1;
   margin: auto;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.task-name[type="text"] {
+  grid-column: 1 / span 1;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: rgb(226, 226, 226);
+  padding: 0 8px;
+  border-radius: 8px;
+  outline: auto;
 }
 
 .task-checkbox {
   grid-column: 3 / span 1;
+  max-height: 30px;
   height: 80%;
+  max-width: 30px;
   width: 80%;
   border-radius: 50%;
 }
 
-.delete-btn {
+.edit-btn {
   grid-column: 4 / span 1;
-  background-color: orangered;
   box-sizing: border-box;
-  border: 1px solid black;
-  transition: background-color 3ms linear;
+  transition: color 3ms linear;
+  max-height: 30px;
   height: 80%;
+  max-width: 30px;
   width: 80%;
-  border-radius: 50%;
   margin: auto;
-  font-size: 1.2em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.delete-btn:hover {
-  background-color: rgb(138, 37, 0);
+.delete-btn {
+  grid-column: 5 / span 1;
+  box-sizing: border-box;
+  transition: color 3ms linear;
+  max-height: 30px;
+  height: 80%;
+  max-width: 30px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-btn:hover,
+.delete-btn:hover,
+.task-checkbox:hover {
+  outline: auto;
+  outline-offset: 4px;
+}
+
+.task-name,
+.task-date,
+.task-name[type="text"],
+.task-date[type="date"] {
+  font-size: 1.2em;
+}
+
+@media (min-width: 1000px) {
+  .task-name,
+  .task-date,
+  .task-name[type="text"],
+  .task-date[type="date"] {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 750px) {
+  .task-date[type="date"] {
+    max-width: 24px;
+    min-width: 20px;
+    width: 100%;
+    max-height: 24px;
+    height: 100%;
+    padding: 0;
+    color: transparent;
+    background: transparent;
+    caret-color: transparent;
+    border: none;
+    align-items: center;
+    justify-self: end;
+    margin: auto 0 auto auto;
+  }
+
+  .task-date::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .task-date::-webkit-datetime-edit {
+    color: transparent;
+  }
+  .task-date::-webkit-datetime-edit-fields-wrapper {
+    color: transparent;
+  }
+  .task-date::-webkit-datetime-edit-text {
+    color: transparent;
+  }
+  .task-date::-webkit-datetime-edit-month-field {
+    color: transparent;
+  }
+  .task-date::-webkit-datetime-edit-day-field {
+    color: transparent;
+  }
+  .task-date::-webkit-datetime-edit-year-field {
+    color: transparent;
+  }
+  .task-date::-webkit-clear-button {
+    display: none;
+  }
+  .task-date::-webkit-inner-spin-button {
+    display: none;
+  }
+  .task-date::-webkit-calendar-picker-indicator {
+    filter: invert(0) grayscale(1) brightness(0);
+    opacity: 1;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .task-date::-moz-placeholder {
+    color: transparent;
+  }
+  .task-date:-moz-ui-invalid {
+    color: transparent;
+  }
+  .task-date:-moz-focusring {
+    color: transparent;
+  }
+  .task-date:-ms-input-placeholder {
+    color: transparent;
+  }
 }
