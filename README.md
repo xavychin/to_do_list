@@ -39,7 +39,7 @@ A simple, modern web app for managing your daily tasks. Built to practice CRUD o
 
 ## 🌐 Website Link
 
-Try it live: [https://xavychin.github.io/to-do-list/](https://xavychin.github.io/to-do-list/)
+Try it live: [https://xavychin.github.io/to_do_list/](https://xavychin.github.io/to_do_list/)
 
 ---
 
@@ -48,7 +48,7 @@ Try it live: [https://xavychin.github.io/to-do-list/](https://xavychin.github.io
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/xavychin/to-do-list.git
+   git clone https://github.com/xavychin/to_do_list.git
    cd to-do-list
    ```
 
